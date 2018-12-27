@@ -54,7 +54,6 @@ int main(int argc, char** argv)
 	while (getline(inputfile, line)) {
 		item = new WorkItem(line.c_str());
 		queue.add(item);
-		std::cout << line << '\n';
 	}
     }
     else

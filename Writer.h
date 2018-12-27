@@ -17,7 +17,6 @@ public:
     Writer(std::shared_ptr<SynchronizedFile> sfptr) : sf(sfptr) { }
 
     void WritesToFile (const string& data) {
-	cout<<"call to write"<<endl;
         sf->Write(data);
     }
 
