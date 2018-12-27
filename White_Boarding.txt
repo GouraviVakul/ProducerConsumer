@@ -1,0 +1,30 @@
+
+
+***************My Understanding and Assumptions of the Problem Statement*************************
+
+
+
+************ Problem Statement Elaboration ****************
+
+1) C++ program , compiling with cmake
+2) Program takes 3 command line inputs ( input file, output file , sort_mechanism )
+3) Validate inputs and also echo Usage
+4) 2 Sorting Algorithms - and reasons for choosing -- ( think in terms of Time Or Space Complexity )
+5) Multiple threads will write into the same Output files - needs to make that "Sections of Code" thread safe ( critical section'ish)
+6) May be factory desing for Algorithm object.
+7) Have instruction in ReadMe
+8) Crosscheck code with cppCheck
+9) No Warnings & limit use of External Libraries
+10) Async Programming
+11)
+
+
+
+
+
+
+************ Assumptions and Avoidance *******************
+
+1) No negative number will be giving in the input file
+2) No mention of "Test Driven Programming", So Unit Tests will NOT be written
+
