@@ -31,10 +31,8 @@ template <typename T> class BufferQueue
     }
     void add(T item) {
         pthread_mutex_lock(&m_mutex);
-	std::cout<< "Buffer Queue " << item << std::endl;
-        m_queue.push_back(item);
-	std::cout<< "List Size" << m_queue.size() << std::endl;
-        pthread_cond_signal(&m_condv);
+	m_queue.push_back(item);
+	pthread_cond_signal(&m_condv);
         pthread_mutex_unlock(&m_mutex);
     }
     T remove() {

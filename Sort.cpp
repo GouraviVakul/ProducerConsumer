@@ -15,7 +15,6 @@ using namespace std;
 
 enumAlogrithm StrToEnum(const char* inString)
 {
-	cout<<"hashit"<<endl;
 	if(!strcmp(inString, "Heapsort")) 
 		return eHeap;
 	if(!strcmp(inString, "Mergesort")) 
@@ -110,11 +109,10 @@ void MergeSort::MergeSortRecur(int *a, int low, int high)
 
 void MergeSort::Sort(std::vector<char>& vec)
 {
-	cout<<"Mergesort::Sort"<<endl;
 	int n = vec.size();
 	int arr[n];
 
-	for (int i = 0; i < n; i++) //todo big blunder
+	for (int i = 0; i < n; i++) //todo 
         arr[i]= vec[i] - '0';
 
 	MergeSortRecur(arr, 0, n-1);
@@ -171,8 +169,6 @@ void HeapSort::heap_sort(int arr[], int n)
 
 void HeapSort::Sort(std::vector<char>& vec)
 {
-
-	cout << "In HEAP SORT" << endl;
     int n = vec.size();  //todo
     int arr[n];
 

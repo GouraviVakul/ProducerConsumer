@@ -5,8 +5,6 @@
  *      Author: Gouravi
  */
 
-using namespace std;
-
 #include<iostream>
 #include<fstream>
 #include <stdio.h>
@@ -14,15 +12,16 @@ using namespace std;
 #include <string>
 #include <unistd.h>
 #include "BufferQueue.h"
-
 #include "ConsumerThread.h"
 #include "Sort.h"
+
+using namespace std;
 
 int main(int argc, char** argv)
 {
     // Process command line arguments
     if ( argc != 4 ) {
-        printf("usage: %s <iterations>\n", argv[0]);//todo validate input arguments
+        cout<<"incorrect input command line arguments";//todo validate input arguments
         exit(-1);
     }
 
@@ -45,34 +44,27 @@ int main(int argc, char** argv)
 
 
     // Add items to the queue
-	// Send the value of each loop iteration to the buffer(shared between consumer and main thread).
-	string line;
-	ifstream inputfile(argv[1]);
-	/*ifstream input(argv[1]);
-        if (!input) {
-                cout << "Cannot open input file. \n";
-                return 0;
-        }*/
-	std::cout << "Outside if inPath" << std::endl;
-	if (inputfile)
-	{
-	std::cout << "Inside if inPath" << std::endl;
-		WorkItem *item;
-		while (getline(inputfile, line)) {
-			item = new WorkItem(line.c_str());
-			queue.add(item);
-			std::cout << line << '\n';
-		}
-		//inputfile.close();
+    // Send the value of each loop iteration to the buffer(shared between consumer and main thread).
+    string line;
+    ifstream inputfile(argv[1]);
+
+    if (inputfile)
+    {
+	WorkItem *item;
+	while (getline(inputfile, line)) {
+		item = new WorkItem(line.c_str());
+		queue.add(item);
+		std::cout << line << '\n';
 	}
-	else
-	{
-		std::cout << "Unable to open file";
-		return 0;
+    }
+    else
+    {
+	std::cout << "Unable to open file";
+	return 0;
     }
 
-    // Ctrl-C to end program //todo how to terminate the program
-    sleep(30000);
+    // Ctrl-C to end program 
+    sleep(60);
     printf("Enter Ctrl-C to end the program...\n");
     while (1){}
     inputfile.close();

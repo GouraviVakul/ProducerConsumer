@@ -7,7 +7,6 @@
 
 #include "Item.h"
 #include "Sort.h"
-
 #include <algorithm>
 #include <iostream>
 #include <iterator>
@@ -24,7 +23,6 @@ Item::Item(const char* data):m_dataStr(data)
 
 bool Item::SplitItem()
 {
-	cout<<"inside splititem"<<endl;
 	bool found = m_dataStr.find(" ")!=string::npos;
 	if(found){
 		m_dataStr.erase(std::remove(m_dataStr.begin(), m_dataStr.end(), ' '), m_dataStr.end());
@@ -35,7 +33,6 @@ bool Item::SplitItem()
 
 void Item::Sort(const char* alg)
 {
-	cout<<"Sort item"<<endl;
 	SortAlgorithm *ptr = GetSortAlgorithm(alg);
 	if(!ptr) cout<<"Getptr is null"<<endl;	
 	ptr->Sort(m_dataVector);
@@ -43,7 +40,6 @@ void Item::Sort(const char* alg)
 
 std::string Item::ResultItem()
 {
-	cout<<"ResultItem"<<endl;
 	std::ostringstream vts;
 
 	// Convert all but the last element to avoid a trailing ","
