@@ -63,7 +63,7 @@ int main(int argc, char** argv)
     }
 
     // Ctrl-C to end program 
-    sleep(60);
+    sleep(30);
     printf("Enter Ctrl-C to end the program...\n");
     while (1){}
     inputfile.close();
