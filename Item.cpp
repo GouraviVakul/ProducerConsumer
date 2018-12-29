@@ -34,8 +34,13 @@ bool Item::SplitItem()
 void Item::Sort(const char* alg)
 {
 	SortAlgorithm *ptr = GetSortAlgorithm(alg);
-	if(!ptr) cout<<"Getptr is null"<<endl;	
-	ptr->Sort(m_dataVector);
+	if(ptr)
+	{
+	  ptr->Sort(m_dataVector);
+          delete ptr;
+	}
+ 	else
+	  cout<<"sort algorithm pointer is null"<<endl;	
 }
 
 std::string Item::ResultItem()
