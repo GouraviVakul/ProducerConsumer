@@ -30,11 +30,12 @@ enumAlogrithm StrToEnum(const char* inString)
                 return new HeapSort();
                 break;
 
-            case eMerge: {cout<<"Merge switch"<<endl;
+            case eMerge: 
                 return new MergeSort();
-                break;}
+                break;
 
-            case eUnknown: break;
+            case eUnknown:
+		break;
             };
         cout<<"end switch"<<endl;
             return 0;
